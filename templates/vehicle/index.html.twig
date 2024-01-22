@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vehicle index{% endblock %}
+
+{% block body %}
+    <h1>Vehicle index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>VehicleCondition</th>
+                <th>Model</th>
+                <th>Price</th>
+                <th>Localisation</th>
+                <th>CarMileage</th>
+                <th>Finishes</th>
+                <th>Length</th>
+                <th>Width</th>
+                <th>TireSpec</th>
+                <th>Year</th>
+                <th>NumberOfSeats</th>
+                <th>NumberOfDoors</th>
+                <th>Horsepower</th>
+                <th>FiscalHorsePower</th>
+                <th>Co2Emissions</th>
+                <th>EnergyConsumption</th>
+                <th>Color</th>
+                <th>TypeOfVehicle</th>
+                <th>GearboxType</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for vehicle in vehicles %}
+            <tr>
+                <td>{{ vehicle.id }}</td>
+                <td>{{ vehicle.name }}</td>
+                <td>{{ vehicle.description }}</td>
+                <td>{{ vehicle.vehicleCondition }}</td>
+                <td>{{ vehicle.model }}</td>
+                <td>{{ vehicle.price }}</td>
+                <td>{{ vehicle.localisation }}</td>
+                <td>{{ vehicle.carMileage }}</td>
+                <td>{{ vehicle.finishes }}</td>
+                <td>{{ vehicle.length }}</td>
+                <td>{{ vehicle.width }}</td>
+                <td>{{ vehicle.tireSpec }}</td>
+                <td>{{ vehicle.year }}</td>
+                <td>{{ vehicle.numberOfSeats }}</td>
+                <td>{{ vehicle.numberOfDoors }}</td>
+                <td>{{ vehicle.horsepower }}</td>
+                <td>{{ vehicle.fiscalHorsePower }}</td>
+                <td>{{ vehicle.co2Emissions }}</td>
+                <td>{{ vehicle.energyConsumption }}</td>
+                <td>{{ vehicle.color }}</td>
+                <td>{{ vehicle.typeOfVehicle }}</td>
+                <td>{{ vehicle.gearboxType }}</td>
+                <td>
+                    <a href="{{ path('app_vehicle_show', {'id': vehicle.id}) }}">show</a>
+                    <a href="{{ path('app_vehicle_edit', {'id': vehicle.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="23">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_vehicle_new') }}">Create new</a>
+{% endblock %}
