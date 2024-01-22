@@ -1,5 +1,4 @@
 <?php
-// src/DataFixtures/BrandsFixtures.php
 
 namespace App\DataFixtures;
 
@@ -9,7 +8,7 @@ use Doctrine\Persistence\ObjectManager;
 
 class BrandsFixtures extends Fixture
 {
-    public const BRAND_REFERENCE = 'brand_reference';
+    public const BRAND_REFERENCE = 'Marque :';
 
     public function load(ObjectManager $manager)
     {
@@ -34,7 +33,7 @@ class BrandsFixtures extends Fixture
 
             $manager->persist($brand);
 
-            $this->addReference(self::BRAND_REFERENCE . '_' . $data['name'], $brand);
+            $this->addReference(self::BRAND_REFERENCE . $data['name'], $brand);
         }
 
         $manager->flush();

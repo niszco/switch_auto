@@ -7,10 +7,13 @@ use App\Enum\Color;
 use App\Enum\TypeOfVehicle;
 use App\Enum\GearboxType;
 use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
 
-class VehicleFixtures extends Fixture
+class VehicleFixtures extends Fixture implements DependentFixtureInterface
 {
+    public const VEHICLE_REFERENCE = "Vehicule :";
+
     public function load(ObjectManager $manager)
     {
 
@@ -30,8 +33,8 @@ class VehicleFixtures extends Fixture
                 'color' => Color::GRIS_CLAIR,
                 'typeOfVehicle' => TypeOfVehicle::CITADINE,
                 'gearboxType' => GearboxType::AUTOMATIQUE,
-                'energyType' => [$this->getReference(EnergyTypeFixtures::ENERGY_TYPE_REFERENCE)],
-                'brands' => $this->getReference(BrandsFixtures::BRAND_REFERENCE),
+                'energyType' => $this->getReference(EnergyTypeFixtures::ENERGY_TYPE_REFERENCE . "Hybride"),
+                'brands' => $this->getReference(BrandsFixtures::BRAND_REFERENCE . "Ford"),
                 'vehicleCondition' => 'Occasion',
                 'horsepower' => '90 CV',
                 'fiscalHorsePower' => '5 CV Fiscaux',
@@ -56,8 +59,8 @@ class VehicleFixtures extends Fixture
                 'color' => Color::NOIR,
                 'typeOfVehicle' => TypeOfVehicle::CITADINE,
                 'gearboxType' => GearboxType::AUTOMATIQUE,
-                'energyType' => [$this->getReference(EnergyTypeFixtures::ENERGY_TYPE_REFERENCE)],
-                'brands' => $this->getReference(BrandsFixtures::BRAND_REFERENCE),
+                'energyType' => $this->getReference(EnergyTypeFixtures::ENERGY_TYPE_REFERENCE . "Essence"),
+                'brands' => $this->getReference(BrandsFixtures::BRAND_REFERENCE . "Volkswagen"),
                 'vehicleCondition' => 'Occasion',
                 'horsepower' => '90 CV',
                 'fiscalHorsePower' => '5 CV Fiscaux',
@@ -85,7 +88,7 @@ class VehicleFixtures extends Fixture
                 ->setColor($data['color'])
                 ->setTypeOfVehicle($data['typeOfVehicle'])
                 ->setGearboxType($data['gearboxType'])
-                ->setName($data['energyType'])
+                ->setName($data['energyType']->getName())
                 ->setBrand($data['brands'])
                 ->setVehicleCondition($data['vehicleCondition'])
                 ->setHorsepower($data['horsepower'])

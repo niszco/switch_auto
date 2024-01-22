@@ -1,5 +1,4 @@
 <?php
-// src/DataFixtures/EnergyTypeFixtures.php
 
 namespace App\DataFixtures;
 
