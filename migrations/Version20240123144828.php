@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20240122163839 extends AbstractMigration
+final class Version20240123144828 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -20,6 +20,12 @@ final class Version20240122163839 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
+        $this->abortIf(
+            !$this->connection->getDatabasePlatform() instanceof \Doctrine\DBAL\Platforms\MariaDb1043Platform,
+            "Migration can only be executed safely on '\Doctrine\DBAL\Platforms\MariaDb1043Platform'."
+        );
+
+        $this->addSql('CREATE TABLE brands (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(255) CHARACTER SET utf8mb4 NOT NULL COLLATE `utf8mb4_unicode_ci`, description VARCHAR(255) CHARACTER SET utf8mb4 DEFAULT NULL COLLATE `utf8mb4_unicode_ci`, logo VARCHAR(255) CHARACTER SET utf8mb4 NOT NULL COLLATE `utf8mb4_unicode_ci`, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB COMMENT = \'\' ');
         $this->abortIf(
             !$this->connection->getDatabasePlatform() instanceof \Doctrine\DBAL\Platforms\MariaDb1043Platform,
             "Migration can only be executed safely on '\Doctrine\DBAL\Platforms\MariaDb1043Platform'."
@@ -55,6 +61,12 @@ final class Version20240122163839 extends AbstractMigration
     public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
+        $this->abortIf(
+            !$this->connection->getDatabasePlatform() instanceof \Doctrine\DBAL\Platforms\MariaDb1043Platform,
+            "Migration can only be executed safely on '\Doctrine\DBAL\Platforms\MariaDb1043Platform'."
+        );
+
+        $this->addSql('DROP TABLE brands');
         $this->abortIf(
             !$this->connection->getDatabasePlatform() instanceof \Doctrine\DBAL\Platforms\MariaDb1043Platform,
             "Migration can only be executed safely on '\Doctrine\DBAL\Platforms\MariaDb1043Platform'."

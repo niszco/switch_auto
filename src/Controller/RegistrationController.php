@@ -30,6 +30,11 @@ class RegistrationController extends AbstractController
                 )
             );
 
+            $user->setFirstName($form->get('firstName')->getData());
+            $user->setLastName($form->get('lastName')->getData());
+            $user->setCompanyName($form->get('companyName')->getData());
+            $user->setTypeOfCustomers($form->get('typeOfCustomers')->getData());
+
             $entityManager->persist($user);
             $entityManager->flush();
             // do anything else you need here, like send an email
