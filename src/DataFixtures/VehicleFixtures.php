@@ -4,6 +4,7 @@ namespace App\DataFixtures;
 
 use App\Entity\Vehicle;
 use App\Enum\Color;
+use App\Enum\EnergyTypes;
 use App\Enum\TypeOfVehicle;
 use App\Enum\GearboxType;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -33,7 +34,7 @@ class VehicleFixtures extends Fixture implements DependentFixtureInterface
                 'color' => Color::GRIS_CLAIR,
                 'typeOfVehicle' => TypeOfVehicle::CITADINE,
                 'gearboxType' => GearboxType::AUTOMATIQUE,
-                'energyType' => $this->getReference(EnergyTypeFixtures::ENERGY_TYPE_REFERENCE . "Hybride"),
+                'energyType' => EnergyTypes::HYBRIDE_E85_RECHARGEABLE,
                 'brands' => $this->getReference(BrandsFixtures::BRAND_REFERENCE . "Ford"),
                 'vehicleCondition' => 'Occasion',
                 'horsepower' => '90 CV',
@@ -59,7 +60,7 @@ class VehicleFixtures extends Fixture implements DependentFixtureInterface
                 'color' => Color::NOIR,
                 'typeOfVehicle' => TypeOfVehicle::CITADINE,
                 'gearboxType' => GearboxType::AUTOMATIQUE,
-                'energyType' => $this->getReference(EnergyTypeFixtures::ENERGY_TYPE_REFERENCE . "Essence"),
+                'energyType' => EnergyTypes::ESSENCE,
                 'brands' => $this->getReference(BrandsFixtures::BRAND_REFERENCE . "Volkswagen"),
                 'vehicleCondition' => 'Occasion',
                 'horsepower' => '90 CV',
@@ -88,7 +89,7 @@ class VehicleFixtures extends Fixture implements DependentFixtureInterface
                 ->setColor($data['color'])
                 ->setTypeOfVehicle($data['typeOfVehicle'])
                 ->setGearboxType($data['gearboxType'])
-                ->setName($data['energyType']->getName())
+                ->setEnergyType($data['energyType'])
                 ->setBrand($data['brands'])
                 ->setVehicleCondition($data['vehicleCondition'])
                 ->setHorsepower($data['horsepower'])
@@ -110,7 +111,6 @@ class VehicleFixtures extends Fixture implements DependentFixtureInterface
     {
         return [
             BrandsFixtures::class,
-            EnergyTypeFixtures::class,
         ];
     }
 }

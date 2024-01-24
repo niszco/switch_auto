@@ -81,16 +81,15 @@ class Vehicle
     #[ORM\Column(length: 30)]
     private ?string $energyConsumption = null;
 
-    #[ORM\ManyToMany(targetEntity: EnergyType::class, mappedBy: 'vehicle')]
-    private Collection $energyTypes;
-
     #[ORM\ManyToOne(inversedBy: 'vehicles')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Brands $brand = null;
 
+    #[ORM\Column(type: 'energy_types_enum')]
+    private $energyType = null;
+
     public function __construct()
     {
-        $this->energyTypes = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -362,33 +361,6 @@ class Vehicle
         return $this;
     }
 
-    /**
-     * @return Collection<int, EnergyType>
-     */
-    public function getEnergyTypes(): Collection
-    {
-        return $this->energyTypes;
-    }
-
-    public function addEnergyType(EnergyType $energyType): static
-    {
-        if (!$this->energyTypes->contains($energyType)) {
-            $this->energyTypes->add($energyType);
-            $energyType->addVehicle($this);
-        }
-
-        return $this;
-    }
-
-    public function removeEnergyType(EnergyType $energyType): static
-    {
-        if ($this->energyTypes->removeElement($energyType)) {
-            $energyType->removeVehicle($this);
-        }
-
-        return $this;
-    }
-
     public function getBrand(): ?Brands
     {
         return $this->brand;
@@ -397,6 +369,18 @@ class Vehicle
     public function setBrand(?Brands $brand): static
     {
         $this->brand = $brand;
+
+        return $this;
+    }
+
+    public function getEnergyType()
+    {
+        return $this->energyType;
+    }
+
+    public function setEnergyType($energyType): static
+    {
+        $this->energyType = $energyType;
 
         return $this;
     }

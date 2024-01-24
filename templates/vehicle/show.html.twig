@@ -12,24 +12,28 @@
                 <td>{{ vehicle.id }}</td>
             </tr>
             <tr>
-                <th>Name</th>
+                <th>Nom du véhicule</th>
                 <td>{{ vehicle.name }}</td>
             </tr>
             <tr>
-                <th>Description</th>
+                <th>Description du véhicule</th>
                 <td>{{ vehicle.description }}</td>
             </tr>
             <tr>
-                <th>VehicleCondition</th>
+                <th>Condition</th>
                 <td>{{ vehicle.vehicleCondition }}</td>
             </tr>
             <tr>
-                <th>Model</th>
+                <th>Modèle</th>
                 <td>{{ vehicle.model }}</td>
             </tr>
             <tr>
-                <th>Price</th>
-                <td>{{ vehicle.price }}</td>
+                <th>Prix</th>
+                <td>{{ vehicle.price }} €</td>
+            </tr>
+            <tr>
+                <th>Énergie du véhicule</th>
+                <td>{{ vehicle.energyType.value }}</td>
             </tr>
             <tr>
                 <th>Localisation</th>
@@ -85,15 +89,15 @@
             </tr>
             <tr>
                 <th>Color</th>
-                <td>{{ vehicle.color }}</td>
+                <td>{{ vehicle.color.value }}</td>
             </tr>
             <tr>
                 <th>TypeOfVehicle</th>
-                <td>{{ vehicle.typeOfVehicle }}</td>
+                <td>{{ vehicle.typeOfVehicle.value }}</td>
             </tr>
             <tr>
                 <th>GearboxType</th>
-                <td>{{ vehicle.gearboxType }}</td>
+                <td>{{ vehicle.gearboxType.value }}</td>
             </tr>
         </tbody>
     </table>

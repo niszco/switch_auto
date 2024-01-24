@@ -10,6 +10,7 @@ doctrine:
             color_enum: 'App\Doctrine\DBAL\Type\ColorEnumType'
             type_of_vehicle_enum: 'App\Doctrine\DBAL\Type\TypeOfVehicleEnumType'
             gearbox_type_enum: 'App\Doctrine\DBAL\Type\GearboxTypeEnumType'
+            energy_types_enum: 'App\Doctrine\DBAL\Type\EnergyTypesEnumType'
 
 
         # IMPORTANT: You MUST configure your server version,

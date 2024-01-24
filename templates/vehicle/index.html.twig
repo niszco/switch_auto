@@ -42,6 +42,7 @@
                 <td>{{ vehicle.vehicleCondition }}</td>
                 <td>{{ vehicle.model }}</td>
                 <td>{{ vehicle.price }}</td>
+                <td>{{ vehicle.energyType.value }}</td>
                 <td>{{ vehicle.localisation }}</td>
                 <td>{{ vehicle.carMileage }}</td>
                 <td>{{ vehicle.finishes }}</td>
@@ -55,9 +56,9 @@
                 <td>{{ vehicle.fiscalHorsePower }}</td>
                 <td>{{ vehicle.co2Emissions }}</td>
                 <td>{{ vehicle.energyConsumption }}</td>
-                <td>{{ vehicle.color }}</td>
-                <td>{{ vehicle.typeOfVehicle }}</td>
-                <td>{{ vehicle.gearboxType }}</td>
+                <td>{{ vehicle.color.value }}</td>
+                <td>{{ vehicle.typeOfVehicle.value }}</td>
+                <td>{{ vehicle.gearboxType.value }}</td>
                 <td>
                     <a href="{{ path('app_vehicle_show', {'id': vehicle.id}) }}">show</a>
                     <a href="{{ path('app_vehicle_edit', {'id': vehicle.id}) }}">edit</a>

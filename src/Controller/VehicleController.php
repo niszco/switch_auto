@@ -17,7 +17,7 @@ class VehicleController extends AbstractController
     #[Route('/', name: 'app_vehicle_index', methods: ['GET'])]
     public function index(VehicleRepository $vehicleRepository): Response
     {
-        return $this->render('vehicle/login.html.twig', [
+        return $this->render('vehicle/index.html.twig', [
             'vehicles' => $vehicleRepository->findAll(),
         ]);
     }

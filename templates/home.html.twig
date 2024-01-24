@@ -17,19 +17,19 @@
         <div id="main-filter" class="flex justify-center p-8">
             <div id="dropdown-options" class="bg-gray-600 bg-opacity-5 w-1/4 h-3/6 p-8 m-2 rounded">
                 <form action="{{ path('app_vehicle_index') }}" method="get" class="text-center flex flex-col">
-                    <label for="energyTypes">Énergie du véhicule :</label>
-                    <select name="energyTypes" id="energyTypes">
-                        <option value="">Aucune préférence</option>
-                        {% for energyType in energyTypes %}
-                            <option value="{{ energyType.name }}">{{ energyType.name }}</option>
-                        {% endfor %}
-                    </select>
-                    <br>
                     <label for="brands">Marque :</label>
                     <select name="brands" id="brands">
                         <option value="">Aucune préférence</option>
                         {% for brand in brands %}
                             <option value="{{ brand.name }}">{{ brand.name }}</option>
+                        {% endfor %}
+                    </select>
+                    <br>
+                    <label for="energyTypes">Énergie du véhicule :</label>
+                    <select name="energyTypes" id="energyTypes">
+                        <option value="">Aucune préférence</option>
+                        {% for energyType in energyTypes %}
+                            <option value="{{ energyType.value }}">{{ energyType.value }}</option>
                         {% endfor %}
                     </select>
                     <br>

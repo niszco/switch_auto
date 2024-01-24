@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Brands;
 use App\Entity\EnergyType;
 use App\Enum\Color;
+use App\Enum\EnergyTypes;
 use App\Enum\GearboxType;
 use App\Enum\TypeOfVehicle;
 use Doctrine\ORM\EntityManagerInterface;
@@ -20,9 +21,9 @@ class HomeController extends AbstractController {
         $colors = Color::cases();
         $types = TypeOfVehicle::cases();
         $gearboxes = GearboxType::cases();
+        $energyTypes = EnergyTypes::cases();
 
         $brands = $entityManager->getRepository(Brands::class)->findAll();
-        $energyTypes = $entityManager->getRepository(EnergyType::class)->findAll();
         {
         return $this->render('home.html.twig', [
             'brands' => $brands,
