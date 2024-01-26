@@ -3,74 +3,36 @@
 {% block title %}Vehicle index{% endblock %}
 
 {% block body %}
-    <h1>Vehicle index</h1>
+    <h1 class="text-center text-7xl text-red-700 font-mono m-8"><a href="{{ path('home') }}">Switch-Auto</a></h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>VehicleCondition</th>
-                <th>Model</th>
-                <th>Price</th>
-                <th>Localisation</th>
-                <th>CarMileage</th>
-                <th>Finishes</th>
-                <th>Length</th>
-                <th>Width</th>
-                <th>TireSpec</th>
-                <th>Year</th>
-                <th>NumberOfSeats</th>
-                <th>NumberOfDoors</th>
-                <th>Horsepower</th>
-                <th>FiscalHorsePower</th>
-                <th>Co2Emissions</th>
-                <th>EnergyConsumption</th>
-                <th>Color</th>
-                <th>TypeOfVehicle</th>
-                <th>GearboxType</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
+    <div id="routes" class="text-center mt-12 mr-4 ml-4 space-x-16 flex text-3xl">
+        <a href="{{ path("app_vehicle_index") }}" class="hover:bg-red-700 bg-opacity-50 hover:text-white rounded-lg p-2 flex-1 mb-8">Acheter un véhicule</a>
+        <a href="{{ path("app_vehicle_new") }}" class="hover:bg-red-700 bg-opacity-50 hover:text-white rounded-lg p-2 flex-1 mb-8">Vendre un véhicule</a>
+        <a href="{{ path("app_login") }}" class="hover:bg-red-700 bg-opacity-50 hover:text-white rounded-lg p-2 flex-1 mb-8">Mon compte</a>
+    </div>
+
+    <div id="vehicle-display" class="text-center flex flex-wrap">
         {% for vehicle in vehicles %}
-            <tr>
-                <td>{{ vehicle.id }}</td>
-                <td>{{ vehicle.name }}</td>
-                <td>{{ vehicle.description }}</td>
-                <td>{{ vehicle.vehicleCondition }}</td>
-                <td>{{ vehicle.model }}</td>
-                <td>{{ vehicle.price }}</td>
-                <td>{{ vehicle.energyType.value }}</td>
-                <td>{{ vehicle.localisation }}</td>
-                <td>{{ vehicle.carMileage }}</td>
-                <td>{{ vehicle.finishes }}</td>
-                <td>{{ vehicle.length }}</td>
-                <td>{{ vehicle.width }}</td>
-                <td>{{ vehicle.tireSpec }}</td>
-                <td>{{ vehicle.year }}</td>
-                <td>{{ vehicle.numberOfSeats }}</td>
-                <td>{{ vehicle.numberOfDoors }}</td>
-                <td>{{ vehicle.horsepower }}</td>
-                <td>{{ vehicle.fiscalHorsePower }}</td>
-                <td>{{ vehicle.co2Emissions }}</td>
-                <td>{{ vehicle.energyConsumption }}</td>
-                <td>{{ vehicle.color.value }}</td>
-                <td>{{ vehicle.typeOfVehicle.value }}</td>
-                <td>{{ vehicle.gearboxType.value }}</td>
-                <td>
-                    <a href="{{ path('app_vehicle_show', {'id': vehicle.id}) }}">show</a>
-                    <a href="{{ path('app_vehicle_edit', {'id': vehicle.id}) }}">edit</a>
-                </td>
-            </tr>
+            <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 mb-4 p-4">
+                <div class="rounded bg-gray-100 p-4">
+                    <div class="mb-2 w-full"><img src="{{ asset(vehicle.images) }}" alt=""></div>
+                    <div class="mb-2">{{ vehicle.name }}</div>
+                    <div class="mb-2">{{ vehicle.vehicleCondition }}</div>
+                    <div class="mb-2">{{ vehicle.price }}€</div>
+                    <div class="mb-2">{{ vehicle.energyType.value }}</div>
+                    <div class="mb-2">{{ vehicle.localisation }}</div>
+                    <div class="mb-2">{{ vehicle.carMileage }}</div>
+                    <div class="mb-2">{{ vehicle.year }}</div>
+                    <div class="mb-2">{{ vehicle.horsepower }}</div>
+                    <div class="mb-2">{{ vehicle.gearboxType.value }}</div>
+                    <button class="hover:bg-red-700 bg-opacity-50 hover:text-white rounded-lg p-2 w-full"><a href="{{ path('app_vehicle_show', {'id': vehicle.id}) }}">show</a></button>
+                    <button class="hover:bg-red-700 bg-opacity-50 hover:text-white rounded-lg p-2 w-full"><a href="{{ path('app_vehicle_edit', {'id': vehicle.id}) }}">edit</a></button>
+                </div>
+            </div>
         {% else %}
-            <tr>
-                <td colspan="23">no records found</td>
-            </tr>
+            <div class="w-full text-center">
+                <p>no records found</p>
+            </div>
         {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('app_vehicle_new') }}">Create new</a>
+    </div>
 {% endblock %}

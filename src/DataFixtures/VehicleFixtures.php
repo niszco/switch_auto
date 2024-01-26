@@ -43,7 +43,7 @@ class VehicleFixtures extends Fixture implements DependentFixtureInterface
                 'numberOfDoors' => 4,
                 'co2Emissions' => '88 g/km',
                 'energyConsumption' => '6.2 L/100km',
-                'images' => '/assets/CAMUUUUUS.png'
+                'images' => 'assets/ford-fiesta.jpg'
             ],
             [
                 'name' => 'VW Polo V 90 CH 1.2L',
@@ -69,7 +69,7 @@ class VehicleFixtures extends Fixture implements DependentFixtureInterface
                 'numberOfDoors' => 4,
                 'co2Emissions' => '92 g/km',
                 'energyConsumption' => '5.7 L/100km',
-                'images' => '/assets/CAMUUUUUS.png'
+                'images' => 'assets/polo_v.jpg'
             ],
         ];
 

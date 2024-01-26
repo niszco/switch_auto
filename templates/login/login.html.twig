@@ -3,7 +3,7 @@
 {% block title %}Connexion à votre compte{% endblock %}
 
 {% block body %}
-    <form method="post" class="">
+    <form method="post" class="text-center">
         {% if error %}
             <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
         {% endif %}
@@ -31,7 +31,7 @@
             </label>
         </div>
 
-        <button id="btn-connect" class="btn" type="submit">
+        <button id="btn-connect" class="hover:bg-red-700 bg-opacity-50 hover:text-white rounded-lg p-2 flex-1" type="submit">
             Se connecter
         </button>
     </form>

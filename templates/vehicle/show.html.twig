@@ -1,110 +1,51 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Vehicle{% endblock %}
+{% block title %} Détails du véhicule :  {% endblock %}
 
 {% block body %}
-    <h1>Vehicle</h1>
+    <div class="container mx-auto mt-8">
+        <h1 class="text-4xl font-semibold mb-6">{{ vehicle.name }} </h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ vehicle.id }}</td>
-            </tr>
-            <tr>
-                <th>Nom du véhicule</th>
-                <td>{{ vehicle.name }}</td>
-            </tr>
-            <tr>
-                <th>Description du véhicule</th>
-                <td>{{ vehicle.description }}</td>
-            </tr>
-            <tr>
-                <th>Condition</th>
-                <td>{{ vehicle.vehicleCondition }}</td>
-            </tr>
-            <tr>
-                <th>Modèle</th>
-                <td>{{ vehicle.model }}</td>
-            </tr>
-            <tr>
-                <th>Prix</th>
-                <td>{{ vehicle.price }} €</td>
-            </tr>
-            <tr>
-                <th>Énergie du véhicule</th>
-                <td>{{ vehicle.energyType.value }}</td>
-            </tr>
-            <tr>
-                <th>Localisation</th>
-                <td>{{ vehicle.localisation }}</td>
-            </tr>
-            <tr>
-                <th>CarMileage</th>
-                <td>{{ vehicle.carMileage }}</td>
-            </tr>
-            <tr>
-                <th>Finishes</th>
-                <td>{{ vehicle.finishes }}</td>
-            </tr>
-            <tr>
-                <th>Length</th>
-                <td>{{ vehicle.length }}</td>
-            </tr>
-            <tr>
-                <th>Width</th>
-                <td>{{ vehicle.width }}</td>
-            </tr>
-            <tr>
-                <th>TireSpec</th>
-                <td>{{ vehicle.tireSpec }}</td>
-            </tr>
-            <tr>
-                <th>Year</th>
-                <td>{{ vehicle.year }}</td>
-            </tr>
-            <tr>
-                <th>NumberOfSeats</th>
-                <td>{{ vehicle.numberOfSeats }}</td>
-            </tr>
-            <tr>
-                <th>NumberOfDoors</th>
-                <td>{{ vehicle.numberOfDoors }}</td>
-            </tr>
-            <tr>
-                <th>Horsepower</th>
-                <td>{{ vehicle.horsepower }}</td>
-            </tr>
-            <tr>
-                <th>FiscalHorsePower</th>
-                <td>{{ vehicle.fiscalHorsePower }}</td>
-            </tr>
-            <tr>
-                <th>Co2Emissions</th>
-                <td>{{ vehicle.co2Emissions }}</td>
-            </tr>
-            <tr>
-                <th>EnergyConsumption</th>
-                <td>{{ vehicle.energyConsumption }}</td>
-            </tr>
-            <tr>
-                <th>Color</th>
-                <td>{{ vehicle.color.value }}</td>
-            </tr>
-            <tr>
-                <th>TypeOfVehicle</th>
-                <td>{{ vehicle.typeOfVehicle.value }}</td>
-            </tr>
-            <tr>
-                <th>GearboxType</th>
-                <td>{{ vehicle.gearboxType.value }}</td>
-            </tr>
-        </tbody>
-    </table>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div>
+                <img src="{{ asset(vehicle.images) }}" class="w-full h-auto rounded mb-4" alt="Vehicle Image">
+            </div>
 
-    <a href="{{ path('app_vehicle_index') }}">back to list</a>
+            <div>
+                <table class="table-auto w-full">
+                    <tbody>
+                    <tr>
+                        <th class="text-right pr-4">Description:</th>
+                        <td>{{ vehicle.description }}</td>
+                    </tr>
+                    <tr>
+                        <th class="text-right pr-4">Condition:</th>
+                        <td>{{ vehicle.vehicleCondition }}</td>
+                    </tr>
+                    <tr>
+                        <th class="text-right pr-4">Modèle:</th>
+                        <td>{{ vehicle.model }}</td>
+                    </tr>
+                    <tr>
+                        <th class="text-right pr-4">Prix:</th>
+                        <td>{{ vehicle.price }} €</td>
+                    </tr>
+                    <tr>
+                        <th class="text-right pr-4">Énergie du véhicule:</th>
+                        <td>{{ vehicle.energyType.value }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
-    <a href="{{ path('app_vehicle_edit', {'id': vehicle.id}) }}">edit</a>
-
-    {{ include('vehicle/_delete_form.html.twig') }}
+        <div class="flex justify-end space-x-4 mb-8">
+            <button class="hover:bg-red-700 bg-opacity-50 hover:text-white rounded-lg p-2 flex-none"><a href="{{ path('app_vehicle_index') }}">Retour à la liste</a></button>
+            <button class="hover:bg-red-700 bg-opacity-50 hover:text-white rounded-lg p-2 flex-none"><a href="{{ path('app_vehicle_edit', {'id': vehicle.id}) }}">Modifier</a></button>
+            <form action="{{ path('app_vehicle_delete', {'id': vehicle.id}) }}" method="post" onsubmit="return confirm('Voulez-vous supprimer ce véhicule ?');">
+                <button type="submit" class="hover:bg-red-700 bg-opacity-50 hover:text-white rounded-lg p-2 flex-none">Supprimer</button>
+                <input type="hidden" value="{{ csrf_token('delete' ~ vehicle.id) }}">
+            </form>
+        </div>
+    </div>
 {% endblock %}
