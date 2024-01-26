@@ -4,11 +4,12 @@
 
 {% block body %}
     <div class="container mx-auto mt-8">
+
         <h1 class="text-4xl font-semibold mb-6">{{ vehicle.name }} </h1>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             <div>
-                <img src="{{ asset(vehicle.images) }}" class="w-full h-auto rounded mb-4" alt="Vehicle Image">
+                <img src="{{ asset(vehicle.images) }}" class="w-full h-auto rounded mb-4" alt="Vehicle Image" width="300px" height="300px">
             </div>
 
             <div>
@@ -42,9 +43,9 @@
         <div class="flex justify-end space-x-4 mb-8">
             <button class="hover:bg-red-700 bg-opacity-50 hover:text-white rounded-lg p-2 flex-none"><a href="{{ path('app_vehicle_index') }}">Retour à la liste</a></button>
             <button class="hover:bg-red-700 bg-opacity-50 hover:text-white rounded-lg p-2 flex-none"><a href="{{ path('app_vehicle_edit', {'id': vehicle.id}) }}">Modifier</a></button>
-            <form action="{{ path('app_vehicle_delete', {'id': vehicle.id}) }}" method="post" onsubmit="return confirm('Voulez-vous supprimer ce véhicule ?');">
-                <button type="submit" class="hover:bg-red-700 bg-opacity-50 hover:text-white rounded-lg p-2 flex-none">Supprimer</button>
+            <form method="post" action="{{ path('app_vehicle_delete', {'id': vehicle.id}) }}" onsubmit="return confirm('Voulez-vous supprimer ce véhicule ?');">
                 <input type="hidden" value="{{ csrf_token('delete' ~ vehicle.id) }}">
+                <button type="submit" class="hover:bg-red-700 bg-opacity-50 hover:text-white rounded-lg p-2 flex-none">Supprimer</button>
             </form>
         </div>
     </div>

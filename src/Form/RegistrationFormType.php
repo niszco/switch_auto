@@ -43,6 +43,10 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
+            ->add('firstName')
+            ->add('lastName')
+            ->add('companyName')
+            ->add('typeOfCustomers')
         ;
     }
 

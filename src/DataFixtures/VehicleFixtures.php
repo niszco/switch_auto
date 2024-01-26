@@ -34,7 +34,7 @@ class VehicleFixtures extends Fixture implements DependentFixtureInterface
                 'color' => Color::GRIS_CLAIR,
                 'typeOfVehicle' => TypeOfVehicle::CITADINE,
                 'gearboxType' => GearboxType::AUTOMATIQUE,
-                'energyType' => EnergyTypes::HYBRIDE_E85_RECHARGEABLE,
+                'energyTypes' => EnergyTypes::HYBRIDE_E85_RECHARGEABLE,
                 'brands' => $this->getReference(BrandsFixtures::BRAND_REFERENCE . "Ford"),
                 'vehicleCondition' => 'Occasion',
                 'horsepower' => '90 CV',
@@ -60,7 +60,7 @@ class VehicleFixtures extends Fixture implements DependentFixtureInterface
                 'color' => Color::NOIR,
                 'typeOfVehicle' => TypeOfVehicle::CITADINE,
                 'gearboxType' => GearboxType::AUTOMATIQUE,
-                'energyType' => EnergyTypes::ESSENCE,
+                'energyTypes' => EnergyTypes::ESSENCE,
                 'brands' => $this->getReference(BrandsFixtures::BRAND_REFERENCE . "Volkswagen"),
                 'vehicleCondition' => 'Occasion',
                 'horsepower' => '90 CV',
@@ -89,7 +89,7 @@ class VehicleFixtures extends Fixture implements DependentFixtureInterface
                 ->setColor($data['color'])
                 ->setTypeOfVehicle($data['typeOfVehicle'])
                 ->setGearboxType($data['gearboxType'])
-                ->setEnergyType($data['energyType'])
+                ->setEnergyTypes($data['energyTypes'])
                 ->setBrand($data['brands'])
                 ->setVehicleCondition($data['vehicleCondition'])
                 ->setHorsepower($data['horsepower'])

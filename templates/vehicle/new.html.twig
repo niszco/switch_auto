@@ -3,9 +3,18 @@
 {% block title %}New Vehicle{% endblock %}
 
 {% block body %}
-    <h1>Create new Vehicle</h1>
+    <header class="shadow-md">
+        <div id="routes" class="text-center mt-12 mr-4 ml-4 space-x-16 flex text-3xl">
+            <a href="{{ path("app_vehicle_index") }}" class="hover:bg-red-700 bg-opacity-50 hover:text-white rounded-lg p-2 flex-1 mb-8">Acheter un véhicule</a>
+            <a href="{{ path("app_login") }}" class="hover:bg-red-700 bg-opacity-50 hover:text-white rounded-lg p-2 flex-1 mb-8">Mon compte</a>
+        </div>
+    </header>
+
+    //TODO : Refaire le CRUD pour l'entité
+
+    <h3>Vendre son véhicule</h3>
 
     {{ include('vehicle/_form.html.twig') }}
 
-    <a href="{{ path('app_vehicle_index') }}">back to list</a>
+    <a href="{{ path('app_vehicle_index') }}">Revenir en arrière</a>
 {% endblock %}

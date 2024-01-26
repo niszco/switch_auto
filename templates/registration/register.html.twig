@@ -1,35 +1,82 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}S'enresgistrer{% endblock %}
 
 {% block body %}
-    <h1>Enregistrez votre compte sur Switch-Auto</h1>
+    <div class="container mx-auto mt-8">
+        <h1 class="text-center text-7xl text-red-700 font-mono m-8"><a href="{{ path('home') }}">Switch-Auto</a></h1>
 
-    {{ form_errors(registrationForm) }}
+        <h3 class="text-4xl text-center font-semibold mb-6">Enregistrez votre compte sur Switch-Auto</h3>
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.username, {
-            label: 'Pseudonyme'
-        }) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Mot de passe'
-        }) }}
-        {{ form_row(registrationForm.firstName, {
-            label: 'Prénom'
-        }) }}
-        {{ form_row(registrationForm.lastName, {
-            label: 'Nom'
-        }) }}
-        {{ form_row(registrationForm.companyName, {
-            label: 'Nom de l\'entreprise (facultatif)'
-        }) }}
-        {{ form_row(registrationForm.typeOfCustomers, {
-            label: 'Votre situation'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms, {
-            label: 'Accepter nos termes de services'
-        }) }}
+        <div class="max-w-md mx-auto bg-white p-6 rounded-md shadow-md">
+            {{ form_errors(registrationForm) }}
 
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+            {{ form_start(registrationForm) }}
+            <div class="mb-4">
+                {{ form_row(registrationForm.username, {
+                    label: 'Pseudonyme',
+                    attr: {
+                        class: 'w-full p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300'
+                    }
+                }) }}
+            </div>
+
+            <div class="mb-4">
+                {{ form_row(registrationForm.plainPassword, {
+                    label: 'Mot de passe',
+                    attr: {
+                        class: 'w-full p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300'
+                    }
+                }) }}
+            </div>
+
+            <div class="mb-4">
+                {{ form_row(registrationForm.firstName, {
+                    label: 'Prénom',
+                    attr: {
+                        class: 'w-full p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300'
+                    }
+                }) }}
+            </div>
+
+            <div class="mb-4">
+                {{ form_row(registrationForm.lastName, {
+                    label: 'Nom',
+                    attr: {
+                        class: 'w-full p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300'
+                    }
+                }) }}
+            </div>
+
+            <div class="mb-4">
+                {{ form_row(registrationForm.companyName, {
+                    label: 'Nom de l\'entreprise (facultatif)',
+                    attr: {
+                        class: 'w-full p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300'
+                    }
+                }) }}
+            </div>
+
+            <div class="mb-4">
+                {{ form_row(registrationForm.typeOfCustomers, {
+                    label: 'Votre situation',
+                    attr: {
+                        class: 'w-full p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300'
+                    }
+                }) }}
+            </div>
+
+            <div class="mb-4">
+                {{ form_row(registrationForm.agreeTerms, {
+                    label: 'Accepter nos termes de services',
+                    attr: {
+                        class: 'mb-2'
+                    }
+                }) }}
+            </div>
+
+            <button type="submit" class="hover:bg-red-700 hover:text-white text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline-blue active:bg-blue-800">Enregistrer son compte</button>
+            {{ form_end(registrationForm) }}
+        </div>
+    </div>
 {% endblock %}

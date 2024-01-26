@@ -86,7 +86,7 @@ class Vehicle
     private ?Brands $brand = null;
 
     #[ORM\Column(type: 'energy_types_enum')]
-    private $energyType = null;
+    private $energyTypes = null;
 
     public function __construct()
     {
@@ -373,14 +373,14 @@ class Vehicle
         return $this;
     }
 
-    public function getEnergyType()
+    public function getEnergyTypes()
     {
-        return $this->energyType;
+        return $this->energyTypes;
     }
 
-    public function setEnergyType($energyType): static
+    public function setEnergyTypes($energyTypes): static
     {
-        $this->energyType = $energyType;
+        $this->energyTypes = $energyTypes;
 
         return $this;
     }
