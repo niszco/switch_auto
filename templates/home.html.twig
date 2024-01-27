@@ -8,7 +8,14 @@
         <div id="routes" class="text-center mt-12 mr-4 ml-4 space-x-16 flex text-3xl">
             <a href="{{ path("app_vehicle_index") }}" class="hover:bg-red-700 bg-opacity-50 hover:text-white rounded-lg p-2 flex-1 mb-8">Acheter un véhicule</a>
             <a href="{{ path("app_vehicle_new") }}" class="hover:bg-red-700 bg-opacity-50 hover:text-white rounded-lg p-2 flex-1 mb-8">Vendre un véhicule</a>
-            <a href="{{ path("app_login") }}" class="hover:bg-red-700 bg-opacity-50 hover:text-white rounded-lg p-2 flex-1 mb-8">Mon compte</a>
+            {% if app.user %}
+                {# Utilisateur connecté #}
+                <a href="{{ path("app_login") }}" class="hover:bg-red-700 bg-opacity-50 hover:text-white rounded-lg p-2 flex-1 mb-8">Mon compte</a>
+            {% else %}
+                {# Utilisateur non connecté #}
+                <a href="{{ path("app_login") }}" class="hover:bg-red-700 bg-opacity-50 hover:text-white rounded-lg p-2 flex-1 mb-8">Connexion</a>
+                <a href="{{ path("app_register") }}" class="hover:bg-red-700 bg-opacity-50 hover:text-white rounded-lg p-2 flex-1 mb-8">Inscription</a>
+            {% endif %}
         </div>
     </header>
 
