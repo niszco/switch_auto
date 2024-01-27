@@ -23,6 +23,21 @@ class BrandsFixtures extends Fixture
                 'description' => 'A German multinational automotive manufacturing company',
                 'logo' => '/assets/vw_logo.png',
             ],
+            [
+                'name' => 'Toyota',
+                'description' => 'A Japanese multinational automotive manufacturing company',
+                'logo' => '/assets/toyota_logo.png',
+            ],
+            [
+                'name' => 'Peugeot',
+                'description' => 'A French multinational automotive manufacturing company',
+                'logo' => '/assets/peugeot_logo.png',
+            ],
+            [
+                'name' => 'Renault',
+                'description' => 'A French multinational automotive manufacturing company',
+                'logo' => '/assets/renault_logo.png',
+            ],
         ];
 
         foreach ($brandData as $data) {

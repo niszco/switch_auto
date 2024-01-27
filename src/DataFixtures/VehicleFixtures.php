@@ -20,7 +20,7 @@ class VehicleFixtures extends Fixture implements DependentFixtureInterface
 
         $vehicleData = [
             [
-                'name' => 'Ford Fiesta 90 CH 1.2L',
+                'name' => 'Ford Fiesta',
                 'description' => 'Petite citadine fiable et compacte',
                 'model' => 'Fiesta',
                 'price' => 8500,
@@ -46,7 +46,7 @@ class VehicleFixtures extends Fixture implements DependentFixtureInterface
                 'images' => 'assets/ford-fiesta.jpg'
             ],
             [
-                'name' => 'VW Polo V 90 CH 1.2L',
+                'name' => 'Volkswagen Polo',
                 'description' => 'Petite citadine fiable et compacte',
                 'model' => 'Polo V',
                 'price' => 14500,
@@ -70,6 +70,58 @@ class VehicleFixtures extends Fixture implements DependentFixtureInterface
                 'co2Emissions' => '92 g/km',
                 'energyConsumption' => '5.7 L/100km',
                 'images' => 'assets/polo_v.jpg'
+            ],
+            [
+                'name' => 'Toyota Yaris GR',
+                'description' => 'Petite citadine sportive',
+                'model' => 'Yaris V',
+                'price' => 43500,
+                'localisation' => 'Bagneux, 92000',
+                'carMileage' => '15544 Km',
+                'finishes' => 'GR',
+                'length' => '4 meters',
+                'width' => '1.8 meters',
+                'tireSpec' => '205/55 R18',
+                'year' => 2023,
+                'color' => Color::ROUGE,
+                'typeOfVehicle' => TypeOfVehicle::SPORTIVE,
+                'gearboxType' => GearboxType::MANUELLE,
+                'energyTypes' => EnergyTypes::ESSENCE,
+                'brands' => $this->getReference(BrandsFixtures::BRAND_REFERENCE . "Toyota"),
+                'vehicleCondition' => 'Occasion',
+                'horsepower' => '276 CV',
+                'fiscalHorsePower' => '9 CV Fiscaux',
+                'numberOfSeats' => 5,
+                'numberOfDoors' => 4,
+                'co2Emissions' => '234 g/km',
+                'energyConsumption' => '7.8 L/100km',
+                'images' => 'assets/toyota-yaris.jpeg'
+            ],
+            [
+                'name' => 'Renault Clio',
+                'description' => 'Petite citadine fiable et compacte',
+                'model' => 'Clio V',
+                'price' => 29500,
+                'localisation' => 'Bagneux, 92000',
+                'carMileage' => '864 Km',
+                'finishes' => 'Alpine',
+                'length' => '4 meters',
+                'width' => '1.8 meters',
+                'tireSpec' => '205/55 R18',
+                'year' => 2023,
+                'color' => Color::BLEU,
+                'typeOfVehicle' => TypeOfVehicle::CITADINE,
+                'gearboxType' => GearboxType::AUTOMATIQUE,
+                'energyTypes' => EnergyTypes::MICRO_HYBRIDE,
+                'brands' => $this->getReference(BrandsFixtures::BRAND_REFERENCE . "Renault"),
+                'vehicleCondition' => 'Occasion',
+                'horsepower' => '130 CV',
+                'fiscalHorsePower' => '6 CV Fiscaux',
+                'numberOfSeats' => 5,
+                'numberOfDoors' => 4,
+                'co2Emissions' => '65 g/km',
+                'energyConsumption' => '5.6 L/100km',
+                'images' => 'assets/renault-clio-5.png'
             ],
         ];
 

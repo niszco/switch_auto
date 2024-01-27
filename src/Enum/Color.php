@@ -15,12 +15,12 @@ enum Color: string
     case ROSE = "Rose";
     case MARRON = "Marron";
     case BLANC = "Blanc";
-    case GRIS_FONCÉ = "Gris foncé";
+    case GRIS_FONCE = "Gris foncé";
     case TURQUOISE = "Turquoise";
     case SAUMON = "Saumon";
     case BEIGE = "Beige";
     case ARGENT = "Argent";
-    case DORÉ = "Doré";
+    case DORE = "Doré";
     case INDIGO = "Indigo";
     case AZUR = "Azur";
     case BRUN = "Brun";
