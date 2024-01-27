@@ -13,27 +13,87 @@
             </div>
 
             <div>
-                <table class="table-auto w-full">
+                <table class="table-auto w-full m-4">
                     <tbody>
                     <tr>
-                        <th class="text-right pr-4">Description:</th>
-                        <td>{{ vehicle.description }}</td>
+                        <th class="text-right pr-4">Prix :</th>
+                        <td class="text-2xl">{{ vehicle.price }} €</td>
                     </tr>
                     <tr>
-                        <th class="text-right pr-4">Condition:</th>
+                        <th class="text-right pr-4">Localisation :</th>
+                        <td>{{ vehicle.localisation }}</td>
+                    </tr>
+                    <tr>
+                        <th class="text-right pr-4">Année du véhicule :</th>
+                        <td>{{ vehicle.year }}</td>
+                    </tr>
+                    <tr>
+                        <th class="text-right pr-4">Condition :</th>
                         <td>{{ vehicle.vehicleCondition }}</td>
                     </tr>
                     <tr>
-                        <th class="text-right pr-4">Modèle:</th>
+                        <th class="text-right pr-4">Modèle :</th>
                         <td>{{ vehicle.model }}</td>
                     </tr>
                     <tr>
-                        <th class="text-right pr-4">Prix:</th>
-                        <td>{{ vehicle.price }} €</td>
+                        <th class="text-right pr-4">Puissance du véhicule :</th>
+                        <td>{{ vehicle.horsepower }}</td>
+                    </tr>
+                    <tr>
+                        <th class="text-right pr-4">Puissance fiscale du véhicule :</th>
+                        <td>{{ vehicle.fiscalHorsePower }}</td>
+                    </tr>
+                    <tr>
+                        <th class="text-right pr-4">Énergie du véhicule :</th>
+                        <td>{{ vehicle.carMileage }}</td>
+                    </tr>
+                    <tr>
+                        <th class="text-right pr-4">Type d'énergie :</th>
+                        <td>{{ vehicle.energyTypes.value }}</td>
+                    </tr>
+                    <tr>
+                        <th class="text-right pr-4">Consommation :</th>
+                        <td>{{ vehicle.energyConsumption }}</td>
+                    </tr>
+                    <tr>
+                        <th class="text-right pr-4">Couleur :</th>
+                        <td>{{ vehicle.color.value }}</td>
+                    </tr>
+                    <tr>
+                        <th class="text-right pr-4">Type de véhicule :</th>
+                        <td>{{ vehicle.typeOfVehicle.value }}</td>
+                    </tr>
+                    <tr>
+                        <th class="text-right pr-4">Boîtes de vitesses :</th>
+                        <td>{{ vehicle.gearboxType.value }}</td>
                     </tr>
                     <tr>
                         <th class="text-right pr-4">Énergie du véhicule:</th>
                         <td>{{ vehicle.energyTypes.value }}</td>
+                    </tr>
+                    <tr>
+                        <th class="text-right pr-4">Finitions du véhicule :</th>
+                        <td>{{ vehicle.finishes }}</td>
+                    </tr>
+                    <tr>
+                        <th class="text-right pr-4">Longueur du véhicule :</th>
+                        <td>{{ vehicle.length }}</td>
+                    </tr>
+                    <tr>
+                        <th class="text-right pr-4">Empatement du véhicule :</th>
+                        <td>{{ vehicle.width }}</td>
+                    </tr>
+                    <tr>
+                        <th class="text-right pr-4">Dimensions du pneu :</th>
+                        <td>{{ vehicle.tireSpec }}</td>
+                    </tr>
+                    <tr>
+                        <th class="text-right pr-4">Nombres de places :</th>
+                        <td>{{ vehicle.numberOfSeats }}</td>
+                    </tr>
+                    <tr>
+                        <th class="text-right pr-4">Nombres de portes :</th>
+                        <td>{{ vehicle.numberOfDoors }}</td>
                     </tr>
                     </tbody>
                 </table>

@@ -27,8 +27,8 @@
                     <div class="mb-2">{{ vehicle.year }}</div>
                     <div class="mb-2">{{ vehicle.horsepower }}</div>
                     <div class="mb-2">{{ vehicle.gearboxType.value }}</div>
-                    <button class="hover:bg-red-700 bg-opacity-50 hover:text-white rounded-lg p-2 w-full"><a href="{{ path('app_vehicle_show', {'id': vehicle.id}) }}">show</a></button>
-                    <button class="hover:bg-red-700 bg-opacity-50 hover:text-white rounded-lg p-2 w-full"><a href="{{ path('app_vehicle_edit', {'id': vehicle.id}) }}">edit</a></button>
+                    <button class="hover:bg-red-700 bg-opacity-50 hover:text-white rounded-lg p-2 flex-none"><a href="{{ path('app_vehicle_show', {'id': vehicle.id}) }}">show</a></button>
+                    <button class="hover:bg-red-700 bg-opacity-50 hover:text-white rounded-lg p-2 flex-none"><a href="{{ path('app_vehicle_edit', {'id': vehicle.id}) }}">edit</a></button>
                 </div>
             </div>
         {% else %}
