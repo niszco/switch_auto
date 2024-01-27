@@ -58,13 +58,14 @@
             </div>
 
             <div class="mb-4">
-                {{ form_row(registrationForm.typeOfCustomers, {
-                    label: 'Votre situation',
-                    attr: {
-                        class: 'w-full p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300'
+                {{ form_label(registrationForm.typeOfCustomers, 'Votre situation') }}
+                {{ form_widget(registrationForm.typeOfCustomers, {
+                    'attr': {
+                        'class': 'w-full p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300'
                     }
                 }) }}
             </div>
+
 
             <div class="mb-4">
                 {{ form_row(registrationForm.agreeTerms, {
