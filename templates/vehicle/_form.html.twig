@@ -1,7 +1,10 @@
 {{ form_start(form) }}
     {{ form_widget(form) }}
-    <label for="brand">Marque :</label>
-    {{ form_widget(form.brand) }}
 
-    <button class="btn">{{ button_label|default('Save') }}</button>
+<div class="mb-4">
+    {{ form_label(form.brands) }}
+    {{ form_widget(form.brands) }}
+</div>
+
+<button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

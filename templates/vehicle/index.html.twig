@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Vehicle index{% endblock %}
+{% block title %}Votre séléction de véhicule{% endblock %}
 
 {% block body %}
     <header id="main-header-content" class="shadow-md">
@@ -11,7 +11,7 @@
             <a href="{{ path("app_vehicle_new") }}" class="hover:bg-red-700 bg-opacity-50 hover:text-white rounded-lg p-2 flex-1 mb-8">Vendre un véhicule</a>
             {% if app.user %}
                 {# Utilisateur connecté #}
-                <a href="{{ path("app_login") }}" class="hover:bg-red-700 bg-opacity-50 hover:text-white rounded-lg p-2 flex-1 mb-8">Mon compte</a>
+                <a href="{{ path("app_logout") }}" class="hover:bg-red-700 bg-opacity-50 hover:text-white rounded-lg p-2 flex-1 mb-8">Déconnexion</a>
             {% else %}
                 {# Utilisateur non connecté #}
                 <a href="{{ path("app_login") }}" class="hover:bg-red-700 bg-opacity-50 hover:text-white rounded-lg p-2 flex-1 mb-8">Connexion</a>
@@ -34,8 +34,21 @@
                     <div class="mb-2">{{ vehicle.year }}</div>
                     <div class="mb-2">{{ vehicle.horsepower }}</div>
                     <div class="mb-2">{{ vehicle.gearboxType.value }}</div>
-                    <button class="hover:bg-red-700 bg-opacity-50 hover:text-white rounded-lg p-2 flex-none"><a href="{{ path('app_vehicle_show', {'id': vehicle.id}) }}">show</a></button>
-                    <button class="hover:bg-red-700 bg-opacity-50 hover:text-white rounded-lg p-2 flex-none"><a href="{{ path('app_vehicle_edit', {'id': vehicle.id}) }}">edit</a></button>
+
+                    {% if app.user and is_granted('ROLE_ADMIN') %}
+                        <button class="hover:bg-red-700 bg-opacity-50 hover:text-white rounded-lg p-2 flex-none">
+                            <a href="{{ path('app_vehicle_show', {'id': vehicle.id}) }}">Détails de ce véhicule</a>
+                        </button>
+                        <button class="hover:bg-red-700 bg-opacity-50 hover:text-white rounded-lg p-2 flex-none">
+                            <a href="{{ path('app_vehicle_edit', {'id': vehicle.id}) }}">Modifier ce véhicule</a>
+                        </button>
+                    {% else %}
+                        <button class="hover:bg-red-700 bg-opacity-50 hover:text-white rounded-lg p-2 flex-none">
+                            <a href="{{ path('app_vehicle_show', {'id': vehicle.id}) }}">Détails de ce véhicule</a>
+                        </button>
+                    {% endif %}
+
+
                 </div>
             </div>
         {% else %}

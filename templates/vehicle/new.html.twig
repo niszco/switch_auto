@@ -11,7 +11,7 @@
             <a href="{{ path("app_vehicle_new") }}" class="hover:bg-red-700 bg-opacity-50 hover:text-white rounded-lg p-2 flex-1 mb-8">Vendre un véhicule</a>
             {% if app.user %}
                 {# Utilisateur connecté #}
-                <a href="{{ path("app_login") }}" class="hover:bg-red-700 bg-opacity-50 hover:text-white rounded-lg p-2 flex-1 mb-8">Mon compte</a>
+                <a href="{{ path("app_logout") }}" class="hover:bg-red-700 bg-opacity-50 hover:text-white rounded-lg p-2 flex-1 mb-8">Déconnexion</a>
             {% else %}
                 {# Utilisateur non connecté #}
                 <a href="{{ path("app_login") }}" class="hover:bg-red-700 bg-opacity-50 hover:text-white rounded-lg p-2 flex-1 mb-8">Connexion</a>

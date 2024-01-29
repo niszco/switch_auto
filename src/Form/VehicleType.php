@@ -2,7 +2,9 @@
 
 namespace App\Form;
 
+use App\Entity\Brands;
 use App\Entity\Vehicle;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -33,7 +35,9 @@ class VehicleType extends AbstractType
             ->add('color')
             ->add('typeOfVehicle')
             ->add('gearboxType')
-            ->add('brand')
+            ->add('brand', EntityType::class, [
+                'class' => Brands::class,
+                'choice_label' => 'name'])
             ->add('energyTypes')
         ;
     }
