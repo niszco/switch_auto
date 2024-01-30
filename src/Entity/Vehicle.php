@@ -60,7 +60,7 @@ class Vehicle
     #[ORM\Column]
     private ?int $year = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $images = null;
 
     #[ORM\Column(length: 30)]

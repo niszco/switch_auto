@@ -33,3 +33,13 @@ H
 templates/base.html.twig,f\f\ffb3f1cfd73fdec1f0c80c63d0b5bbc1fff22022
 M
 translations/messages.en.yaml,4\4\44608ba7c261c1a51dab59db3f2904bf25d563a1
+F
+src/Form/ColorType.php,7\8\78c50a5be43810bec99888aa328c2f0816441b36
+F
+src/Entity/Vehicle.php,2\4\24dd0db8a2e388962934ae9a5855f8d532105ee8
+Q
+!src/Controller/HomeController.php,a\d\ad8b439416d1e02614f47c5b471c7c4e587dca82
+P
+ config/packages/translation.yaml,c\7\c7b3dfc088a7c85e5aee83fc03d12b4572887bcb
+Q
+!src/Form/RegistrationFormType.php,9\5\95d4b58438357928efb9c5a862a6d289d874e878
