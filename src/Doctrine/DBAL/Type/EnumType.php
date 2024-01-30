@@ -14,7 +14,7 @@ abstract class EnumType extends Type
      */
     protected abstract function getEnum(): string;
 
-    public function getSQLDeclaration(array $column, AbstractPlatform $platform)
+    public function getSQLDeclaration(array $column, AbstractPlatform $platform): string
     {
         $enum = $this->getEnum();
         $cases = array_map(
@@ -25,20 +25,20 @@ abstract class EnumType extends Type
         return sprintf('ENUM(%s)', implode(', ', $cases));
     }
 
-    public function requiresSQLCommentHint(AbstractPlatform $platform)
+    public function requiresSQLCommentHint(AbstractPlatform $platform): bool
     {
         return true;
     }
 
-    public function convertToPHPValue($value, AbstractPlatform $platform)
+    public function convertToPHPValue($value, AbstractPlatform $platform): mixed
     {
         $enumClass = $this->getEnum();
 
         return $enumClass::from($value);
     }
 
-    public function convertToDatabaseValue($enum, AbstractPlatform $platform)
+    public function convertToDatabaseValue($enum, AbstractPlatform $platform): mixed
     {
-        return $enum->value;
+        return $enum;
     }
 }

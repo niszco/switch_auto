@@ -13,34 +13,11 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Validator\Constraints\Choice;
-use Symfony\Component\Validator\Constraints\NotBlank;
 
 class VehicleType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
-        $colorChoices = [];
-        $typeOfVehicleChoices = [];
-        $energyTypesChoices = [];
-        $gearboxTypeChoices = [];
-
-        foreach (Color::cases() as $color) {
-            $colorChoices[$color->value] = $color->value;
-        }
-
-        foreach (TypeOfVehicle::cases() as $typeOfVehicle) {
-            $typeOfVehicleChoices[$typeOfVehicle->value] = $typeOfVehicle->value;
-        }
-
-        foreach (GearboxType::cases() as $gearboxType) {
-            $gearboxTypeChoices[$gearboxType->value] = $gearboxType->value;
-        }
-
-        foreach (EnergyTypes::cases() as $energyTypes) {
-            $energyTypesChoices[$energyTypes->value] = $energyTypes->value;
-        }
-
         $builder
             ->add('name')
             ->add('description')
@@ -61,35 +38,28 @@ class VehicleType extends AbstractType
             ->add('co2Emissions')
             ->add('energyConsumption')
             ->add('color', ChoiceType::class, [
-                'choices' => $colorChoices,
-                'constraints' => [
-                    new NotBlank(),
-                    new Choice(choices: Color::cases(), message: 'Invalid color value.'),
-                ],
+                'choices' => Color::cases(),
+                'choice_label' => fn(?Color $color) => $color ? $color->value : '',
+                'choice_value' => fn(?Color $color) => $color ? $color->value : '',
+                'placeholder' => 'Choisissez une couleur',
             ])
-
             ->add('energyTypes', ChoiceType::class, [
-                'choices' => $energyTypesChoices,
-                'constraints' => [
-                    new NotBlank(),
-                    new Choice(choices: EnergyTypes::cases(), message: 'Invalid color value.'),
-                ],
+                'choices' => EnergyTypes::cases(),
+                'choice_label' => fn(?EnergyTypes $energyType) => $energyType ? $energyType->value : '',
+                'choice_value' => fn(?EnergyTypes $energyType) => $energyType ? $energyType->value : '',
+                'placeholder' => 'Choisissez un type d\'énergie',
             ])
-
-            ->add('gearboxType', ChoiceType::class, [
-                'choices' => $gearboxTypeChoices,
-                'constraints' => [
-                    new NotBlank(),
-                    new Choice(choices: GearboxType::cases(), message: 'Invalid color value.'),
-                ],
-            ])
-
             ->add('typeOfVehicle', ChoiceType::class, [
-                'choices' => $typeOfVehicleChoices,
-                'constraints' => [
-                    new NotBlank(),
-                    new Choice(choices: TypeOfVehicle::cases(), message: 'Invalid color value.'),
-                ],
+                'choices' => TypeOfVehicle::cases(),
+                'choice_label' => fn(?TypeOfVehicle $typeOfVehicle) => $typeOfVehicle ? $typeOfVehicle->value : '',
+                'choice_value' => fn(?TypeOfVehicle $typeOfVehicle) => $typeOfVehicle ? $typeOfVehicle->value : '',
+                'placeholder' => 'Choisissez un type de véhicule',
+            ])
+            ->add('gearboxType', ChoiceType::class, [
+                'choices' => GearboxType::cases(),
+                'choice_label' => fn(?GearboxType $gearboxType) => $gearboxType ? $gearboxType->value : '',
+                'choice_value' => fn(?GearboxType $gearboxType) => $gearboxType ? $gearboxType->value : '',
+                'placeholder' => 'Choisissez un type de boîte de vitesse',
             ])
 
             ->add('brand', EntityType::class, [

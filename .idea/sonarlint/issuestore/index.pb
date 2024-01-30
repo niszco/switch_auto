@@ -57,3 +57,5 @@ X
 (src/Doctrine/DBAL/Type/ColorEnumType.php,f\4\f47e29cb910cf2f54bdfba61a600e45debea91b3
 S
 #src/Doctrine/DBAL/Type/EnumType.php,0\0\0028a6268ee3ab927d15f80e5687bd73cf65d678
+P
+ templates/vehicle/show.html.twig,e\6\e6dea2f6923bc282a22369b85d5af56424dddf6c
