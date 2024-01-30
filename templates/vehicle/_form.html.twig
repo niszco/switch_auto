@@ -1,10 +1,127 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
 
-<div class="mb-4">
-    {{ form_label(form.brands) }}
-    {{ form_widget(form.brands) }}
+<div class="min-h-screen flex items-center justify-center">
+    <div class="w-1/4">
+    <div class="m-4">
+        {{ form_label(form.name, 'Nom du véhicule', {'class': 'block text-gray-700 text-sm font-bold mb-2'}) }}
+        {{ form_widget(form.name, {'attr': {'class': 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}}) }}
+    </div>
+
+    <div class="m-4">
+        {{ form_label(form.description, 'Description', {'class': 'block text-gray-700 text-sm font-bold mb-2'}) }}
+        {{ form_widget(form.description, {'attr': {'class': 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}}) }}
+    </div>
+
+    <div class="m-4">
+        {{ form_label(form.vehicleCondition, 'Condition du véhicule', {'class': 'block text-gray-700 text-sm font-bold mb-2'}) }}
+        {{ form_widget(form.vehicleCondition, {'attr': {'class': 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}}) }}
+    </div>
+
+    <div class="m-4">
+        {{ form_label(form.model, 'Modèle', {'class': 'block text-gray-700 text-sm font-bold mb-2'}) }}
+        {{ form_widget(form.model, {'attr': {'class': 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}}) }}
+    </div>
+
+    <div class="m-4">
+        {{ form_label(form.price, 'Prix', {'class': 'block text-gray-700 text-sm font-bold mb-2'}) }}
+        {{ form_widget(form.price, {'attr': {'class': 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}}) }}
+    </div>
+
+    <div class="m-4">
+        {{ form_label(form.localisation, 'Localisation du véhicule', {'class': 'block text-gray-700 text-sm font-bold mb-2'}) }}
+        {{ form_widget(form.localisation, {'attr': {'class': 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}}) }}
+    </div>
+
+    <div class="m-4">
+        {{ form_label(form.carMileage, 'Kilométrage du véhicule', {'class': 'block text-gray-700 text-sm font-bold mb-2'}) }}
+        {{ form_widget(form.carMileage, {'attr': {'class': 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}}) }}
+    </div>
+
+    <div class="m-4">
+        {{ form_label(form.finishes, 'Finitions du véhicule', {'class': 'block text-gray-700 text-sm font-bold mb-2'}) }}
+        {{ form_widget(form.finishes, {'attr': {'class': 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}}) }}
+    </div>
+
+    <div class="m-4">
+        {{ form_label(form.length, 'Longueur du véhicule (facultatif)', {'class': 'block text-gray-700 text-sm font-bold mb-2'}) }}
+        {{ form_widget(form.length, {'attr': {'class': 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}}) }}
+    </div>
+
+    <div class="m-4">
+        {{ form_label(form.width, 'Empatement du véhicule (facultatif)', {'class': 'block text-gray-700 text-sm font-bold mb-2'}) }}
+        {{ form_widget(form.width, {'attr': {'class': 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}}) }}
+    </div>
+
+    <div class="m-4">
+        {{ form_label(form.tireSpec, 'Spécifications des pneus du véhicule (facultatif)', {'class': 'block text-gray-700 text-sm font-bold mb-2'}) }}
+        {{ form_widget(form.tireSpec, {'attr': {'class': 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}}) }}
+    </div>
+
+    <div class="m-4">
+        {{ form_label(form.year, 'Année de production du véhicule', {'class': 'block text-gray-700 text-sm font-bold mb-2'}) }}
+        {{ form_widget(form.year, {'attr': {'class': 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}}) }}
+    </div>
+
+    <div class="m-4">
+        {{ form_label(form.numberOfSeats, 'Nombres de sièges', {'class': 'block text-gray-700 text-sm font-bold mb-2'}) }}
+        {{ form_widget(form.numberOfSeats, {'attr': {'class': 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}}) }}
+    </div>
+
+    <div class="m-4">
+        {{ form_label(form.numberOfDoors, 'Nombres de portes (coffre inclus)', {'class': 'block text-gray-700 text-sm font-bold mb-2'}) }}
+        {{ form_widget(form.numberOfDoors, {'attr': {'class': 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}}) }}
+    </div>
+
+    <div class="m-4">
+        {{ form_label(form.horsepower, 'Puissance du véhicule', {'class': 'block text-gray-700 text-sm font-bold mb-2'}) }}
+        {{ form_widget(form.horsepower, {'attr': {'class': 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}}) }}
+    </div>
+
+    <div class="m-4">
+        {{ form_label(form.fiscalHorsePower, 'Puissance fiscale du véhicule', {'class': 'block text-gray-700 text-sm font-bold mb-2'}) }}
+        {{ form_widget(form.fiscalHorsePower, {'attr': {'class': 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}}) }}
+    </div>
+
+    <div class="m-4">
+        {{ form_label(form.co2Emissions, 'Émissions de CO2 du véhicule (facultatif)', {'class': 'block text-gray-700 text-sm font-bold mb-2'}) }}
+        {{ form_widget(form.co2Emissions, {'attr': {'class': 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}}) }}
+    </div>
+
+    <div class="m-4">
+        {{ form_label(form.energyConsumption, 'Consommation du véhicule (en L/100Km)', {'class': 'block text-gray-700 text-sm font-bold mb-2'}) }}
+        {{ form_widget(form.energyConsumption, {'attr': {'class': 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}}) }}
+    </div>
+
+    <div class="m-4">
+        {{ form_label(form.color, 'Couleur du véhicule', {'class': 'block text-gray-700 text-sm font-bold mb-2'}) }}
+        {{ form_widget(form.color, {'attr': {'class': 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}}) }}
+    </div>
+
+    <div class="m-4">
+        {{ form_label(form.typeOfVehicle, 'Catégorie du véhicule', {'class': 'block text-gray-700 text-sm font-bold mb-2'}) }}
+        {{ form_widget(form.typeOfVehicle, {'attr': {'class': 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}}) }}
+    </div>
+
+    <div class="m-4">
+        {{ form_label(form.gearboxType, 'Type de boîte de vitesse du véhicule', {'class': 'block text-gray-700 text-sm font-bold mb-2'}) }}
+        {{ form_widget(form.gearboxType, {'attr': {'class': 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}}) }}
+    </div>
+
+    <div class="m-4">
+        {{ form_label(form.brand, 'Marque du véhicule', {'class': 'block text-gray-700 text-sm font-bold mb-2'}) }}
+        {{ form_widget(form.brand, {'attr': {'class': 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}}) }}
+    </div>
+
+    <div class="m-4">
+        {{ form_label(form.energyTypes, 'Type d\'énergie du véhicule', {'class': 'block text-gray-700 text-sm font-bold mb-2'}) }}
+        {{ form_widget(form.energyTypes, {'attr': {'class': 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}}) }}
+    </div>
+
+    <button class="bg-red-700 hover:bg-red-500 text-white font-bold py-2 px-4 rounded focus:outline-none transform-50" type="submit">
+        {{ button_label|default('Ajouter votre véhicule') }}
+    </button>
+    </div>
 </div>
 
-<button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
+

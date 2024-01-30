@@ -1,0 +1,24 @@
+fr:
+  messages:
+      Description: Description
+      Condition du véhicule: Vehicle Condition
+      Modèle: Model
+      Prix: Price
+      Localisation du véhicule: Vehicle Location
+      Kilométrage du véhicule: Mileage
+      Finitions du véhicule: Vehicle Finishes
+      Longueur du véhicule (facultatif): Vehicle Length (optional)
+      Empattement du véhicule (facultatif): Wheelbase (optional)
+      Spécifications des pneus du véhicule (facultatif): Vehicle Tire Specifications (optional)
+      Année de production du véhicule: Vehicle Production Year
+      Nombres de sièges: Number of Seats
+      Nombres de portes (coffre inclus): Number of Doors (including trunk)
+      Puissance du véhicule: Vehicle Power
+      Puissance fiscale du véhicule: Vehicle Tax Power
+      Émissions de CO2 du véhicule (facultatif): Vehicle CO2 Emissions (optional)
+      Consommation du véhicule (en L/100Km): Vehicle Consumption (in L/100Km)
+      Couleur du véhicule: Vehicle Color
+      Catégorie du véhicule: Vehicle Category
+      Type de boîte de vitesse du véhicule: Vehicle Transmission Type
+      Marque du véhicule: Vehicle Brand
+      Type d'énergie du véhicule: Vehicle Energy Type

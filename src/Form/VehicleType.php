@@ -4,8 +4,15 @@ namespace App\Form;
 
 use App\Entity\Brands;
 use App\Entity\Vehicle;
+use App\Enum\Color;
+use App\Enum\EnergyTypes;
+use App\Enum\GearboxType;
+use App\Enum\TypeOfVehicle;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\ChoiceList\ChoiceList;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\FormTypeInterface;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -32,13 +39,24 @@ class VehicleType extends AbstractType
             ->add('fiscalHorsePower')
             ->add('co2Emissions')
             ->add('energyConsumption')
-            ->add('color')
-            ->add('typeOfVehicle')
-            ->add('gearboxType')
+            ->add('color', ChoiceType::class, [
+                'choices' => Color::cases(),
+            ])
+
+            ->add('energyTypes', ChoiceType::class, [
+                'choices' => energyTypes::cases(),
+            ])
+
+            ->add('gearboxType', ChoiceType::class, [
+                'choices' => gearboxType::cases(),
+            ])
+
+            ->add('typeOfVehicle', ChoiceType::class, [
+                'choices' => typeOfVehicle::cases(),
+            ])
             ->add('brand', EntityType::class, [
                 'class' => Brands::class,
                 'choice_label' => 'name'])
-            ->add('energyTypes')
         ;
     }
 
