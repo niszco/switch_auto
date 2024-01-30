@@ -43,3 +43,17 @@ P
  config/packages/translation.yaml,c\7\c7b3dfc088a7c85e5aee83fc03d12b4572887bcb
 Q
 !src/Form/RegistrationFormType.php,9\5\95d4b58438357928efb9c5a862a6d289d874e878
+M
+translations/messages.fr.yaml,6\1\6115fa3a054e8f8853e80db1747415acdc41784b
+Y
+)src/Controller/RegistrationController.php,b\6\b6a5dce1eac6107738aa6c9b363b605aa2315b2c
+T
+$src/Controller/VehicleController.php,7\1\715a94594113f897c1cf3fa7f6e3e916c6a01221
+P
+ templates/vehicle/edit.html.twig,0\c\0cf62a6cf36542138900d5b935c1bb78a076e3c9
+X
+(templates/vehicle/_delete_form.html.twig,c\6\c6fd42d89af4fe483fc6de7c71b4046f5dce8f2d
+X
+(src/Doctrine/DBAL/Type/ColorEnumType.php,f\4\f47e29cb910cf2f54bdfba61a600e45debea91b3
+S
+#src/Doctrine/DBAL/Type/EnumType.php,0\0\0028a6268ee3ab927d15f80e5687bd73cf65d678

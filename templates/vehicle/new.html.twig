@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Ajouter son véhicule chez Switch-Auto{% endblock %}
+{% block title %}Vendre son véhicule chez Switch-Auto{% endblock %}
 
 {% block body %}
     <header id="main-header-content" class="shadow-md">
@@ -22,6 +22,4 @@
     <h3 class="text-center text-2xl m-4">Vendre son véhicule</h3>
 
     {{ include('vehicle/_form.html.twig') }}
-
-    <a href="{{ path('app_vehicle_index') }}">Revenir en arrière</a>
 {% endblock %}
