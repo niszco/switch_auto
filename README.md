@@ -26,3 +26,7 @@ Login _ADMIN_ :
 Login _USER_ :
 - pseudo : user
 - pwd : user
+
+**Vidéo :** 
+
+https://youtu.be/P3oCPQPoMok
