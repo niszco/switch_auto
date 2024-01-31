@@ -59,3 +59,11 @@ M
 config/packages/doctrine.yaml,8\4\8407b4a9f249ef233d425138c0e8540c756c614a
 Y
 )templates/registration/register.html.twig,1\c\1c8c7e669830383faba8ed6ab3baf68e465540f5
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+Q
+!src/DataFixtures/UserFixtures.php,3\2\3208c8d6d439df48da60bd45292a0324c0d24b41
+H
+templates/home.html.twig,3\8\38ac5fc300d52f94b369e87fbb1937abe29f831f
+R
+"src/Controller/LoginController.php,3\7\3752fbffcbb946366b35fcaa7e54210c60429249

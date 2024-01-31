@@ -14,14 +14,6 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/vehicle')]
 class VehicleController extends AbstractController
 {
-    #[Route('/', name: 'app_vehicle_index', methods: ['GET'])]
-    public function index(VehicleRepository $vehicleRepository): Response
-    {
-        return $this->render('vehicle/index.html.twig', [
-            'vehicles' => $vehicleRepository->findAll(),
-        ]);
-    }
-
     #[Route('/new', name: 'app_vehicle_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
@@ -33,7 +25,7 @@ class VehicleController extends AbstractController
             $entityManager->persist($vehicle);
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_vehicle_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('home', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('vehicle/new.html.twig', [
@@ -59,7 +51,7 @@ class VehicleController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_vehicle_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('home', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('vehicle/edit.html.twig', [
@@ -76,6 +68,6 @@ class VehicleController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('app_vehicle_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('home', [], Response::HTTP_SEE_OTHER);
     }
 }
