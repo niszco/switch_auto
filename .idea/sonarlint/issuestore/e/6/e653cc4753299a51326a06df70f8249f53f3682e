@@ -1,2 +1,9 @@
 
-u	php:S3776"TRefactor this function to reduce its Cognitive Complexity from 16 to the 15 allowed.(Ì¥¯‚ÿÿÿÿÿ8í¬¢áÕ1
+H	php:S1172+",Remove the unused function parameter "$key".(ãû­ï8­ìıÕ1
+J	php:S1172+".Remove the unused function parameter "$value".(ãû­ï8­ìıÕ1
+H	php:S11723",Remove the unused function parameter "$key".(ãû­ï8áëìıÕ1
+J	php:S11723".Remove the unused function parameter "$value".(ãû­ï8áëìıÕ1
+H	php:S1172;",Remove the unused function parameter "$key".(ãû­ï8èíıÕ1
+J	php:S1172;".Remove the unused function parameter "$value".(ãû­ï8èíıÕ1
+H	php:S1172C",Remove the unused function parameter "$key".(ãû­ï8’¥îıÕ1
+J	php:S1172C".Remove the unused function parameter "$value".(ãû­ï8’¥îıÕ1

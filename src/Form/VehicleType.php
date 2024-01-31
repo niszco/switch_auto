@@ -10,7 +10,7 @@ use App\Enum\GearboxType;
 use App\Enum\TypeOfVehicle;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\EnumType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -37,28 +37,36 @@ class VehicleType extends AbstractType
             ->add('fiscalHorsePower')
             ->add('co2Emissions')
             ->add('energyConsumption')
-            ->add('color', ChoiceType::class, [
+            ->add('color', EnumType::class, [
+                'class' => Color::class,
                 'choices' => Color::cases(),
-                'choice_label' => fn(?Color $color) => $color ? $color->value : '',
-                'choice_value' => fn(?Color $color) => $color ? $color->value : '',
+                'choice_label' => function ($choice, $key, $value) {
+                    return $choice->value;
+                },
                 'placeholder' => 'Choisissez une couleur',
             ])
-            ->add('energyTypes', ChoiceType::class, [
+            ->add('energyTypes', EnumType::class, [
+                'class' => EnergyTypes::class,
                 'choices' => EnergyTypes::cases(),
-                'choice_label' => fn(?EnergyTypes $energyType) => $energyType ? $energyType->value : '',
-                'choice_value' => fn(?EnergyTypes $energyType) => $energyType ? $energyType->value : '',
+                'choice_label' => function ($choice, $key, $value) {
+                    return $choice->value;
+                },
                 'placeholder' => 'Choisissez un type d\'énergie',
             ])
-            ->add('typeOfVehicle', ChoiceType::class, [
+            ->add('typeOfVehicle', EnumType::class, [
+                'class' => TypeOfVehicle::class,
                 'choices' => TypeOfVehicle::cases(),
-                'choice_label' => fn(?TypeOfVehicle $typeOfVehicle) => $typeOfVehicle ? $typeOfVehicle->value : '',
-                'choice_value' => fn(?TypeOfVehicle $typeOfVehicle) => $typeOfVehicle ? $typeOfVehicle->value : '',
+                'choice_label' => function ($choice, $key, $value) {
+                    return $choice->value;
+                },
                 'placeholder' => 'Choisissez un type de véhicule',
             ])
-            ->add('gearboxType', ChoiceType::class, [
+            ->add('gearboxType', EnumType::class, [
+                'class' => GearboxType::class,
                 'choices' => GearboxType::cases(),
-                'choice_label' => fn(?GearboxType $gearboxType) => $gearboxType ? $gearboxType->value : '',
-                'choice_value' => fn(?GearboxType $gearboxType) => $gearboxType ? $gearboxType->value : '',
+                'choice_label' => function ($choice, $key, $value) {
+                    return $choice->value;
+                },
                 'placeholder' => 'Choisissez un type de boîte de vitesse',
             ])
 

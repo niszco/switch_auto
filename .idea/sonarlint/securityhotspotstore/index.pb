@@ -31,10 +31,6 @@ B
 src/Enum/Color.php,5\7\57e3840f072dc2613eb5757a5821b68978219e1f
 H
 templates/base.html.twig,f\f\ffb3f1cfd73fdec1f0c80c63d0b5bbc1fff22022
-M
-translations/messages.en.yaml,4\4\44608ba7c261c1a51dab59db3f2904bf25d563a1
-F
-src/Form/ColorType.php,7\8\78c50a5be43810bec99888aa328c2f0816441b36
 F
 src/Entity/Vehicle.php,2\4\24dd0db8a2e388962934ae9a5855f8d532105ee8
 Q
@@ -59,3 +55,7 @@ S
 #src/Doctrine/DBAL/Type/EnumType.php,0\0\0028a6268ee3ab927d15f80e5687bd73cf65d678
 P
  templates/vehicle/show.html.twig,e\6\e6dea2f6923bc282a22369b85d5af56424dddf6c
+M
+config/packages/doctrine.yaml,8\4\8407b4a9f249ef233d425138c0e8540c756c614a
+Y
+)templates/registration/register.html.twig,1\c\1c8c7e669830383faba8ed6ab3baf68e465540f5
